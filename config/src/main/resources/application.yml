@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Hawing2333/springcloud_config.git
+      label: master
+server:
+  port: 7755

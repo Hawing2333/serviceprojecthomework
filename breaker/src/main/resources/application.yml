@@ -1,0 +1,31 @@
+server:
+  port: 8004
+spring:
+  application:
+    name: provider
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/customer?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+  instance:
+    instance-id: breakerprovider
+    prefer-ip-address: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: edu.neu.springcloud.breaker.bean
+
+logging:
+  level:
+    root: info
+
+info.app.name: providerbreaker
+info.company.name: neu
+info.author.name: lhd
+
